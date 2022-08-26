@@ -11,7 +11,19 @@
     <div class="gyro"></div>
     <script>
         window.addEventListener("deviceorientation", handleOrientation, true);
-        screen.orientation.lock('landscape');
+        function handleOrientation(event) {
+            var absolute = event.absolute;
+            
+            document.addEventListener("orientationchange", function(event){
+                switch(window.orientation) 
+                {  
+                    case -90: case 90:
+                        /* Device is in landscape mode */
+                        break; 
+                    default:
+                        /* Device is in portrait mode */
+                }
+            });
             
             var alpha    = event.alpha;
             var beta     = event.beta;
