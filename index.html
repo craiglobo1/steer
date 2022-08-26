@@ -16,9 +16,15 @@
             var alpha    = event.alpha;
             var beta     = event.beta;
             var gamma    = event.gamma;
+
+            absolute = Math.round((absolute + Number.EPSILON) * 100) / 100;
+            alpha = Math.round((alpha + Number.EPSILON) * 100) / 100;
+            beta = Math.round((beta + Number.EPSILON) * 100) / 100;
+            gamma = Math.round((gamma + Number.EPSILON) * 100) / 100;
                  
             const gyro_div = document.getElementsByClassName("gyro")[0];
             gyro_div.textContent = `${String(absolute)} ${String(alpha)} ${String(beta)} ${String(gamma)} `;
+            console.log(`${String(absolute)} ${String(alpha)} ${String(beta)} ${String(gamma)} `)
         }
     </script>
 
