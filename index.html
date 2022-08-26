@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Client</h1>
+    <div class="gyro"></div>
     <script>
         window.addEventListener("deviceorientation", handleOrientation, true);
         function handleOrientation(event) {
@@ -15,9 +16,12 @@
             var alpha    = event.alpha;
             var beta     = event.beta;
             var gamma    = event.gamma;
-            console.log(absolute, alpha, beta, gamma);
+                 
+            const gyro_div = document.getElementsByClassName("gyro")[0];
+            gyro_div.innerHTML = `${String(absolute)} ${String(alpha)} ${String(beta)} ${String(gamma)} `;
         }
     </script>
+
 </body>
 </html>
 
